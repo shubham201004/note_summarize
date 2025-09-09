@@ -1,0 +1,764 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: url("/static/bg.jpg") no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Notes List */
+.notes-list {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.note-item {
+  background: #f8f9fa;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.note-item:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+.note-title {
+  font-weight: bold;
+  color: #222;
+}
+
+.note-desc {
+  color: #555;
+  margin-left: 15px;
+}
+
+/* Button */
+.add-btn {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #0078d7;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #0056a3;
+}
+
+/* Form Container */
+.form-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 500px;
+  width: 90%;
+  margin: 50px auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+/* Form Title */
+.form-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #0078d7;
+  box-shadow: 0 0 5px rgba(0, 120, 215, 0.5);
+}
+
+/* Button */
+.note-form .btn {
+  width: 100%;
+  padding: 12px;
+  background: #0078d7;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.note-form .btn:hover {
+  background: #0056a3;
+}
+
+/* Back link */
+.back-link {
+  margin-top: 15px;
+}
+
+.back-link a {
+  text-decoration: none;
+  color: #0078d7;
+  font-size: 14px;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+/* Notes list */
+.notes-list {
+  list-style: none;
+  padding: 0;
+}
+
+.note-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffffcc;
+  padding: 12px 16px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.note-item .update-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  /* push it to the right */
+}
+
+.note-item .update-form input[type="text"] {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.note-item .update-form input[type="text"]:focus {
+  border-color: #0078d7;
+  box-shadow: 0 0 4px rgba(0, 120, 215, 0.5);
+}
+
+.note-item .update-form button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.note-item .update-form button:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+.note-item .update-form button:active {
+  background: #1e7e34;
+  transform: scale(0.95);
+}
+
+/* Delete Button */
+.note-item form button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.note-item form button:hover {
+  background: #e60000;
+  transform: scale(1.05);
+}
+
+.note-item form button:active {
+  background: #cc0000;
+  transform: scale(0.95);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Page background */
+body {
+  background: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Card container */
+.container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  max-width: 95%;
+  text-align: center;
+}
+
+/* Header */
+.container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #1f2937;
+}
+
+/* Note row styling */
+.note-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #f9fafc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Note text labels */
+.note-row span {
+  font-weight: 600;
+  color: #111827;
+  min-width: 60px;
+  text-align: left;
+}
+
+/* Input fields */
+.note-row input[type="text"] {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.note-row input[type="text"]:focus {
+  border-color: #4f46e5;
+}
+
+/* Delete button */
+.delete-btn {
+  background: #ef4444;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* Update button */
+.update-btn {
+  background: #22c55e;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.update-btn:hover {
+  background: #16a34a;
+}
+
+/* Add Note button */
+.add-note-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-note-btn:hover {
+  background: #1e40af;
+}
+
+/* .pop_field{ display: none; } */
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Card Container */
+.container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  max-width: 95%;
+}
+
+/* Heading */
+.container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #1f2937;
+}
+
+/* Notes List */
+.notes-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.note-item {
+  background: #f9fafc;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.note-item:hover {
+  background: #f1f5f9;
+}
+
+/* Display row (title + description) */
+/* Display block */
+.note-display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Hide update form by default */
+.update-form {
+  display: none;
+  margin-top: 8px;
+}
+
+.note-title {
+  font-weight: 600;
+  color: #111827;
+}
+
+.note-desc {
+  color: #4b5563;
+  margin-left: 8px;
+}
+
+.update-form input[type="text"] {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  flex: 1;
+}
+
+.update-form input[type="text"]:focus {
+  border-color: #4f46e5;
+}
+
+/* Buttons */
+.update-btn,
+.delete-btn {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.update-btn {
+  background: #22c55e;
+}
+
+.update-btn:hover {
+  background: #16a34a;
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  background: #ef4444;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+/* Add button */
+.add-note-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-note-btn:hover {
+  background: #1e40af;
+}
+/* Summarize Button */
+.summarize-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  margin-left: 12px;
+  background: #9333ea; /* purple tone */
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.summarize-btn:hover {
+  background: #7e22ce;
+  transform: scale(1.05);
+}
+
+.summarize-btn:active {
+  background: #6b21a8;
+  transform: scale(0.95);
+}
+.summary-container {
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 18px;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: fadeInUp 0.6s ease-in-out;
+}
+
+/* Header */
+.summary-header {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* Card */
+.summary-card {
+  background: #f9fafc;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+/* Title */
+.summary-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 15px;
+}
+
+/* Subtitle */
+.summary-subtitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 15px 0 10px;
+  color: #4f46e5;
+}
+
+/* Summary text */
+.summary-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #374151;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 4px solid #4f46e5;
+}
+
+/* Back button */
+.back-btn {
+  margin-top: 10px;
+}
+
+.back-btn-link {
+  display: inline-block;
+  background: #4f46e5;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.back-btn-link:hover {
+  background: #4338ca;
+  transform: translateY(-2px);
+}
+
+.back-btn-link:active {
+  transform: scale(0.95);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 404 Page Styles */
+body {
+  background: #f3f4f6; /* light grey background */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.error-container {
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: fadeInUp 0.7s ease-in-out;
+}
+
+.error-code {
+  font-size: 100px;
+  font-weight: 800;
+  color: #ef4444; /* red */
+  margin-bottom: 20px;
+  letter-spacing: 4px;
+}
+
+.error-message {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827; /* dark grey */
+  margin-bottom: 15px;
+}
+
+.error-description {
+  font-size: 16px;
+  color: #6b7280; /* medium grey */
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.error-btn {
+  display: inline-block;
+  background: #2563eb; /* blue */
+  color: white;
+  padding: 12px 26px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.error-btn:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}
+
+.error-btn:active {
+  transform: scale(0.95);
+}
+
+/* Animation for container */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Container for notes */
+.note-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px;
+  border-radius: 12px;
+  background: #f9fafc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: background 0.3s ease;
+}
+
+.note-display:hover {
+  background: #f1f5f9;
+}
+
+.note-title {
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.note-desc {
+  color: #374151;
+  max-width: 600px;
+  line-height: 1.5;
+  font-size: 15px;
+  position: relative;
+}
+
+/* Read More / Less styling */
+.read-toggle {
+  font-weight: 600;
+  color: #2563eb; /* blue */
+  cursor: pointer;
+  margin-left: 6px;
+  transition: color 0.2s ease;
+}
+
+.read-toggle:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+/* Smooth reveal */
+.note-desc .hidden-text {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.note-desc.expanded .hidden-text {
+  display: inline;
+  opacity: 1;
+}

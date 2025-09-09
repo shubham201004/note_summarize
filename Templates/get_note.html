@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Notes</title>
+    <link rel="stylesheet" href="/static/styles.css?v=2.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📝 All the Notes</h1>
+        <ul class="notes-list">
+            {% for item in items %}
+            <li class="note-item">
+                <!-- Display Mode -->
+                <div class="note-display">
+                    <span class="note-title">{{ item.title }}</span>
+                    <span class="note-desc add-read-more" data-limit="200">{{ item.description }}</span>
+                    <a href="/summarize/{{item.id}}" class="summarize-btn">✨ Summarize</a>
+                </div>
+
+
+                <!-- Update Form (hidden by default) -->
+                <form class="update-form" data-id="{{item.id}}" style="display:none;">
+                    <input type="text" name="title" value="{{item.title}}" class="pop_field" required>
+                    <input type="text" name="description" value="{{item.description}}" class="pop_field" required>
+                    <button type="submit" class="update_submit">💾 Save</button>
+                    <button type="button" class="cancel-btn">❌ Cancel</button>
+                    
+                </form>
+
+                <!-- Actions -->
+                <div class="note-actions">
+                    <button class="update-btn">✏️ Edit</button>
+                    <form action="/delete/{{item.id}}" method="post" style="display:inline;">
+                        <button type="submit" class="delete_submit">🗑 Delete</button>
+                    </form>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <div class="add-btn">
+            <a href="/notes" class="btn">➕ Add More Notes</a>
+        </div>
+    </div>
+    <script src="/static/index.js?v=2.0"></script>
+</body>
+
+</html>

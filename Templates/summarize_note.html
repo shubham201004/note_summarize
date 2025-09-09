@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Summary</title>
+    <link rel="stylesheet" href="/static/styles.css?v=2.1">
+</head>
+
+<body>
+    <div class="summary-container">
+        <h1 class="summary-header">📄 Note Summary</h1>
+
+        <div class="summary-card">
+            <h2 class="summary-title">{{ note.title }}</h2>
+            <hr>
+            <h3 class="summary-subtitle">✨ Summary</h3>
+            <p class="summary-text">{{ summary }}</p>
+        </div>
+
+        <div class="back-btn">
+            <a href="/all_notes" class="btn back-btn-link">⬅ Back to All Notes</a>
+        </div>
+    </div>
+</body>
+
+</html>
