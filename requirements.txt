@@ -9,3 +9,4 @@ bitsandbytes
 accelerate
 python-dotenv
 psycopg2-binary
+fastapi-sessions

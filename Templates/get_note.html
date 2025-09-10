@@ -12,7 +12,14 @@
 
 <body>
     <div class="container">
-        <h1>📝 All the Notes</h1>
+        <!-- Header with Logout -->
+        <header class="page-header">
+            <h1>📝 All the Notes</h1>
+            <nav>
+                <a href="/logout" class="logout-btn">🚪 Logout</a>
+            </nav>
+        </header>
+
         <ul class="notes-list">
             {% for item in items %}
             <li class="note-item">
@@ -23,14 +30,12 @@
                     <a href="/summarize/{{item.id}}" class="summarize-btn">✨ Summarize</a>
                 </div>
 
-
                 <!-- Update Form (hidden by default) -->
                 <form class="update-form" data-id="{{item.id}}" style="display:none;">
                     <input type="text" name="title" value="{{item.title}}" class="pop_field" required>
                     <input type="text" name="description" value="{{item.description}}" class="pop_field" required>
                     <button type="submit" class="update_submit">💾 Save</button>
                     <button type="button" class="cancel-btn">❌ Cancel</button>
-                    
                 </form>
 
                 <!-- Actions -->
@@ -48,6 +53,7 @@
             <a href="/notes" class="btn">➕ Add More Notes</a>
         </div>
     </div>
+
     <script src="/static/index.js?v=2.0"></script>
 </body>
 
